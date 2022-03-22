@@ -1,73 +1,63 @@
 <template>
-  <div id='About'>
-      <div class="content">
-        <div class="content-container">
-          <div class="row">
-            <div class="col-md-6 offset-md-3"> 
-              <h3>What is mental health</h3>
-              <p>The World Health Organization (WHO) conceptualizes mental health as a “state of well-being in which the individual realizes his or her own abilities, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to his or her community”. Mental disorders and psychoactive substance-related disorders are highly prevalent throughout the world and are major contributors to morbidity, disability, and premature mortality. However, the resources allocated by countries to tackle this burden are insufficient, are inequitably distributed, and, at times, inefficiently used. Together, this has led to a treatment gap that, in many countries, is more than 70%. The stigma, social exclusion, and discrimination that occur around people with mental disorders compound the situation.</p>
-            </div>
+   <div class="blog">
+    <h1>This is the blog page</h1>
+
+  <div class="container" v-if="posts.length">
+  			<div v-for = "post in posts" :key="post.id" class="posts">
+					<div class="card">
+						<div class="card-image">
+							<img src="posts.img" alt="">
+						</div>
+						<div class="card-content">
+							<h3>{{posts.title}}</h3>
+							<p>{{posts.description}}</p>
+              <p>{{posts.date}}</p>
+						</div>
+						<!-- <button class="custom-btn btn-9">Github</button><br>
+						<button class="custom-btn btn-9">Netlify</button> -->
+					</div>
+    		</div>
+  		</div>  
+    <!-- <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto id ipsa incidunt laboriosam nisi neque corporis itaque accusantium iste alias perferendis, molestiae tenetur ducimus atque nostrum similique corrupti natus aliquam.
+            </p>
           </div>
-           
-        </div>
-      </div>  
-      <div class="container1">
-      <div class="row align-items-start">
-        
-        <div class="col-3">
-          <h6>Suicide Crisis Helpline</h6> 0800 567 567 </div>
-        <div class="col-3">  
-          <h6>Mental Health Helpline</h6> 0800 456 789</div>
-        <div class="col-3">  
-          <h6>Depression & Anxiety Helpline</h6> 0800 70 80 90</div>
-        <div class="col-3">  
-          <h6>ADHD Helpline</h6> 0800 55 44 33</div>
-        </div>
-        </div>
-        <div class="links">
-        </div>
-      </div>  
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+          </div> 
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+          </div>  
+      </div>
+      </div>
+    </footer>  -->
+  </div>
 </template>
 
 <script>
-export default {
-  name:"About",
-  components: {
+export default { 
+  data() {
+    return {
+      posts: []
+    }
+  },
+  mounted() {
+    fetch('https://mental-health-association.herokuapp.com/') // ADD HEROKU LINK INSTEAD OF LOCALHOST
+      .then(res => res.json())
+      .then(data => this.posts = data)
+      .catch(err => console.log(err.message))
   }
 }
+
+
 </script>
 
-<style scoped>
-#About{
-	 width: 100%;
-   /* height: 90vh;  */
-   background-color: rgb(231, 219, 219)
-	 /* background-color:rgba(0, 0, 0, 15%); */
-	 /* margin-top: 2rem; */
-	
-}
-/* .img{
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
-  background-repeat: no-repeat;
-  height: 90vh;
-} */
-.content{
-  border-radius: 30px;
-  background-color: #1fd1f9;
-  margin: 20px;
-  /* width:60% */
-}
-.container1{
-  margin-top: 5%;
-  border-block: 5px;
-}
-.col-3{
-  border: solid;
-  border-radius: 20px;
-  background-color: chartreuse;
-}
-
-/* .project {
+<style>
+ /* .project {
 	display: flex;
 	background-color: rgba(0, 0, 0, 15%); 
 }
@@ -86,7 +76,7 @@ export default {
 	width: 300px;
 	height: 400px;
 	background: rgba(255, 255, 255, 0.05); 
-  	background:#111;
+  background:#111;
 	margin: 20px;
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 	border-radius: 15px;
@@ -165,17 +155,11 @@ export default {
 	color: #fff;
 	font-size: 20px;
 }
-#about-me{
-  background-color: whitesmoke;
-  padding-bottom: 30px; 
-  height: 100vh;
-  width: 100%;
-}
 .container{
     height: 100vh;
     margin-left: 200px;
     padding-bottom:30px ; 
-} */
+} 
 
 /* Button */
 /* .frame {
@@ -349,7 +333,6 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .user__info > small {
   color: #666;
-}
- */
+} */
 
 </style>
