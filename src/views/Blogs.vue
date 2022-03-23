@@ -1,8 +1,28 @@
 <template>
    <div class="blog">
     <h1>This is the blog page</h1>
+  <div class="blog-card spring-fever">
+  <div class="title-content">
+    <h3><a href="#">10 inspiring photos</a></h3>
+    <div class="intro"> <a href="#">Inspiration</a> </div>
+  </div>
+  <div class="card-info">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... 
+    <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+  </div>
+  <div class="utility-info">
+    <ul class="utility-list">
+      <li><span class="licon icon-like"></span><a href="#">2</a></li>
+      <li><span class="licon icon-com"></span><a href="#">12</a></li>
+      <li><span class="licon icon-dat"></span>03 jun 2017</li>
+      <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
+    </ul>
+  </div>
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
 
-  <div class="container">
+  <!-- <div class="container" v-if="posts">
   			<div v-for ="post in posts" :key="post.id" class="posts">
 					<div class="card">
 						<div class="card-image">
@@ -13,28 +33,10 @@
 							<p>{{posts.description}}</p>
               <p>{{posts.date}}</p>
 						</div>
-						<!-- <button class="custom-btn btn-9">Github</button><br>
-						<button class="custom-btn btn-9">Netlify</button> -->
 					</div>
     		</div>
-  		</div>  
-    <!-- <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto id ipsa incidunt laboriosam nisi neque corporis itaque accusantium iste alias perferendis, molestiae tenetur ducimus atque nostrum similique corrupti natus aliquam.
-            </p>
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
-          </div> 
-          <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
-          </div>  
-      </div>
-      </div>
-    </footer>  -->
+  		</div>   -->
+    
   </div>
 </template>
 
@@ -48,7 +50,10 @@ export default {
   mounted() {
     fetch('https://mental-health-association.herokuapp.com/posts') // ADD HEROKU LINK INSTEAD OF LOCALHOST
       .then(res => res.json())
-      .then(data => this.posts = data)
+      .then(data => {
+        console.log(data)
+        this.posts = data
+      })
       .catch(err => console.log(err.message))
   }
 }
@@ -56,282 +61,290 @@ export default {
 </script>
 
 <style>
- /* .project {
-	display: flex;
-	background-color: rgba(0, 0, 0, 15%); 
+@import url(//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic);
+html,body{
+  height:100%
 }
-.container {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	margin: 40px 0;
+body {
+  /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
+  font-family: 'Droid Serif', serif;
 }
 
-.container .card {
-	position: relative;
-	width: 300px;
-	height: 400px;
-	background: rgba(255, 255, 255, 0.05); 
-  background:#111;
-	margin: 20px;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-	border-radius: 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	backdrop-filter: blur(10px);
-}
-
-.container .card .content {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	transition: 0.5s;
-}
-
-.container .card:hover .content {
-	transform: translateY(-20px);
-}
-
-.container .card .content .imgBx {
-	position: relative;
-	width: 150px;
-	height: 150px;
-	overflow: hidden;
-}
-
-.container .card .content .imgBx img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.container .card .content .contentBx h3 {
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 500;
-	font-size: 18px;
-	text-align: center;
-	margin: 20px 0 10px;
-	line-height: 1.1em;
-}
-
-.container .card .content .contentBx h3 span {
-	font-size: 12px;
-	font-weight: 300;
-	text-transform: initial;
-}
-
-.container .card .sci {
-	position: absolute;
-	bottom: 50px;
-	display: flex;
-}
-
-.container .card .sci li {
-	list-style: none;
-	margin: 0 10px;
-	transform: translateY(40px);
-	transition: 0.5s;
-	opacity: 0;
-}
-
-.container .card:hover .sci li {
-	transform: translateY(0px);
-	opacity: 1;
-}
-
-.container .card .sci li a {
-	color: #fff;
-	font-size: 20px;
-}
-.container{
-    height: 100vh;
-    margin-left: 200px;
-    padding-bottom:30px ; 
-} 
-
-/* Button */
-/* .frame {
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
-button {
-  margin: 20px;
-}
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-}
-.btn-9 {
-  border: none;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-.btn-9:after {
+.blog-card {
+  max-width: 550px;
+  width:100%;
+  height: 500px;
   position: absolute;
-  content: " ";
-  z-index: -1;
+  font-family: 'Droid Serif', serif;
+  color:#fff;
+  top: 20%;
+  right: 0;  
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition:all 0.4s;
+  background: url(https://unsplash.it/600/800?image=1061) center no-repeat;
+  background-size: 100%;
+}
+.blog-card a{ 
+color:#fff;
+  text-decoration:none;
+  transition:all 0.2s
+}
+.blog-card .color-overlay {
+  background: rgba(64, 84, 94,0.5);
+  width: 550px;
+  height: 500px;
+  position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
+  transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+.blog-card .gradient-overlay {  
+  background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 21%);
+  width: 550px;
+  height: 500px;
+  position: absolute;
+  top: 350px;
+  left: 0;
+  z-index: 15;
+}
+.blog-card:hover{
+    box-shadow: 0px 18px 20px -9px rgba(0, 10, 30, 0.75);
+}
+.blog-card:hover .card-info {
+  opacity: 1;
+  bottom: 100px;
+}
+.blog-card:hover .color-overlay {
+  background: rgba(64, 64, 70,0.8);
+}
+.blog-card:hover .title-content{
+  margin-top:70px
+}
+.title-content {
+  text-align: center;
+  margin: 170px 0 0 0;
+  position: absolute;
+  z-index: 20;
   width: 100%;
-  height: 100%;
-   background-color: #1fd1f9;
-background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
-  transition: all 0.3s ease;
-}
-.btn-9:hover {
-  background: transparent;
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-  color: #fff;
-}
-.btn-9:hover:after {
-  -webkit-transform: scale(2) rotate(180deg);
-  transform: scale(2) rotate(180deg);
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  top: 0;
+  left: 0;
+  transition:all 0.6s
 }
 
-.site-footer{
-  background-color: aqua;
-  margin-top: 90vh;
+.blog-card:hover h3:after{
+ 
+  animation: changeLetter 0.3s 1 linear;
+  width:80%
 }
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.blog-card h3,h1 {
+  font-size: 1.9em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'Abril Fatface', serif;
+  margin-bottom: 0;
+  display:inline-block;
+}
+.blog-card h3 a{  
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
+  transition:all 0.2s
+}
+.blog-card h3 a:hover{
+  text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.95);
+}
+h3:after {
+  content: " ";
+  display: block; 
+  width: 10%;
+  height: 2px;
+  margin: 20px auto;
+  border: 0;
+  background: #BDA26B;
+  transition:all 0.2s
+}
+
+@keyframes changeLetter {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.intro {
+  width: 170px;
+  margin: 0 auto;
+  color: #ddd;
+  font-style: italic;
+  line-height: 18px;
+}
+.intro a{
+  color: #ddd
+}
+.intro a:hover{
+  text-decoration:underline
+}
+.card-info {
+   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  margin: 0 auto;
+  padding: 0 50px;
+  font-style: 16px;
+  line-height: 24px;
+  z-index: 20;
+  opacity: 0;
+  transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
 
-body {
-  font-family: "Quicksand", sans-serif;
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background: #7f7fd5;
-  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+.card-info a{
+  display:block;
+  width:100px;
+  margin:15px auto;
+  background:#fff;
+  color:#444;
+  padding:3px 10px;
+  border-radius:2px;
+  font-size:0.8em
+}
+.card-info a:hover{
+  background: #8e7c49;
+  color:#fff;
+}
+.card-info a:hover span{
+   filter: brightness(10);
+   opacity:1
+}
+.utility-info {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: 20;
+  width:100%;
+  text-align:left
+}
+.utility-info:after{
+  content:" ";
+  background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat;
+  background-size: 30px auto;
+  display:block;
+  opacity: 0.4;
+  position:absolute;
+  bottom:25px;
+  right:15px;
+  width:30px;
+  height:15px
+}
+.utility-info a:hover{
+  text-decoration:underline
+}
+.utility-list {
+  list-style-type: none;
+  margin: 0 0 10px 20px;
+  padding: 0;
+  width: 100%;
+
+}
+.utility-list li {
+  margin: 0 5px 0 0;
+  padding: 3px 0 15px 0px;
+  display: inline-block;
+  
+  font-size:0.8em
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
+.licon{
+  position:relative;  
+   width:23px;
+   height:15px;
+   display:inline-block;
+   vertical-align:middle;
+}
+.licon:before{
+  content:"";
+   background:url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg?) -2px -6px no-repeat;
+   background-size:250px;
+   width:26px;
+   height:20px;
+   display:inline-block;
+   vertical-align:middle;
+   position:absolute;
+   top:-3px;
+   left:0;
+}
+.icon-white{
+   filter: brightness(10);
+}
+.icon-black{
+   filter: brightness(0);
+   opacity:0.6
+}
+.icon-like:before{
+  background-position: -183px -6px;
+
+}
+.icon-com:before{
+  background-position: -63px -4px;
+
+}
+.icon-dat:before{
+  background-position: -94px -7px;
+}
+.icon-tag:before{
+  background-position: -33px -6px;
+
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  object-fit: cover;
+@media (max-width:750px)
+{
+  .utility-info {
+    text-align:center;
+  }
+  .utility-info ul{
+    width:100%;
+    margin:0;
+    box-sizing:border-box
+  }
+  .utility-info li{
+    width:49%;
+    display:inline-block;
+    box-sizing:border-box;
+    margin:0
+  }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  width: clamp(20rem, calc(20rem + 2vw), 22rem);
-  overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
-  background: #ECE9E6;
-background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-
+@media (max-width:500px){
+  .utility-info li:last-of-type{
+    width:100%
+  }
+  .card-info{
+    display:none
+  }
+  .blog-card:hover .title-content,.title-content{
+  margin-top:40px
+}
+.blog-card{
+  height:300px
+}
+.blog-card h3{
+  font-size:1.3em
+}
+.intro{
+  font-size:0.8em
+}
 }
 
 
 
-.card__body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-
-.tag {
-  align-self: flex-start;
-  padding: .25em .75em;
-  border-radius: 1em;
-  font-size: .75rem;
-}
-
-.tag + .tag {
-  margin-left: .5em;
-}
-
-.tag-blue {
-  background: #56CCF2;
-background: linear-gradient(to bottom, #2F80ED, #56CCF2);
-  color: #fafafa;
-}
-
-.tag-brown {
-  background: #D1913C;
-background: linear-gradient(to bottom, #FFD194, #D1913C);
-  color: #fafafa;
-}
-
-.tag-red {
-  background: #cb2d3e;
-background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-  color: #fafafa;
-}
-
-.card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
-
-.card__footer {
-  display: flex;
-  padding: 1rem;
-  margin-top: auto;
-}
-
-.user {
-  display: flex;
-  gap: .5rem;
-}
-
-.user__image {
-  border-radius: 50%;
-}
-
-.user__info > small {
-  color: #666;
-} */
 
 </style>

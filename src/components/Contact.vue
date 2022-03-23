@@ -20,17 +20,17 @@
       </div>
     </div>
     <div class="contact-form-wrapper">
-      <form>
+      <form @submit.prevent="handleSubmit" action="Post">
         <div class="form-item">
-          <input type="text" name="sender" required>
-          <label>Name:</label>
+          <input type="text" name="sender" required v-model="name"/>
+          <label>Name:</label> 
         </div>
         <div class="form-item">
-          <input type="text" name="email" required>
+          <input type="text" name="email" required v-model="email"/>
           <label>Email:</label>
         </div>
         <div class="form-item">
-          <textarea class="" name="message" required></textarea>
+          <textarea class="" name="Message" required v-model="message"></textarea>
           <label>Message:</label>
         </div>
         <button class="submit-btn">Send</button>  
@@ -43,11 +43,41 @@
 
 <script>
 export default {
-name:"Contact",
-  components: {
-    
-  }
-}
+  data() {
+    return {
+    name: "",
+    email: "",
+    message: ""
+    };
+  },
+
+  methods: {
+    handleSubmit() {console.log(`Form Submitted`)
+      console.log(this.name)
+      console.log(this.email)
+      console.log(this.message)
+      fetch('', {
+        method:"POST",
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          message: this.message,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((response) => response.json())
+      .then((json) => {
+        alert("Email Sent!"),
+        this.name = "",
+        this.email = "",
+        this.message = ""
+      })
+      .catch((e) => alert(e.msg))
+    },
+  },
+};
 </script>
 
 <style scoped>
