@@ -2,45 +2,56 @@
   <div class="home">
     <div class="parallax">
     <div class="slide"></div>
-    </div>
-    <h3>THE MENTAL HEALTH ASSOCIATION</h3>
-    <div class="content">
-      <div class="container">
-    <div class="prod-card">
-      <div class="row">
-        <div class="col-5">
-          <div class="img">
-            <img src="https://picsum.photos/id/318/320" alt="shirt" />
+    </div><br><br>
+    <h1>THE MENTAL HEALTH ASSOCIATION</h1>
+    <div class="container">
+      <div class="content">  
+        <h3>What is mental health?</h3>
+        <p>Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+          Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected.</p><br>
+       
+        <div class="row">
+          <div class="col-sm-6"><h5>CAUSES</h5>
+            <p>*Inherited traits. Mental illness is more common in people whose blood        relatives also have a mental illness.
+            Certain genes may increase your risk of developing a mental illness, and your life situation may trigger it.</p>
+            <p>*Environmental exposures before birth. Exposure to environmental stressors, inflammatory conditions, toxins, alcohol or drugs while in the womb can sometimes be linked to mental illness.</p>
+            <p>*Brain chemistry. Neurotransmitters are naturally occurring brain chemicals that carry signals to other parts of your brain and body. When the neural networks involving these chemicals are impaired, the function of nerve receptors and nerve systems change, leading to depression and other emotional disorders.</p>
           </div>
-        </div>
-        
+           <div class="col-sm-6"><h5>PREVENTION</h5>
+           <p>Pay attention to warning signs.</p>
+           <p>Get routine medical care.</p>
+           <p>Get help when you need it. </p>
+           <p>Take good care of yourself. Sufficient sleep, healthy eating and regular physical activity are important. Try to maintain a regular schedule. </p>
+        </div>  
+      </div>  
+    </div><br><br> 
+    <div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg)>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card w-100">
-            <div class="card-body">
-              <h5 class="card-title">Comment's</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <div class="form-outline">
-                <input
-                  type="text"
-                  id="form16"
-                  class="form-control"
-                  data-mdb-showcounter="true"
-                  maxlength="50"
-                />
-                <label class="form-label" for="form16">Add comment</label>
-                <div class="form-helper"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg)>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://imgkub.com/images/2022/03/22/tablets-g243c0ff75_1920.jpg)>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://imgkub.com/images/2022/03/22/falling-ge0396a95f_1920.jpg)>
+      </div>
+    <div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://i.postimg.cc/TY5x63BX/kat-j-NPm-R0-Rblyh-Q-unsplash.jpg)>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src= url(https://i.postimg.cc/cHVvsb1x/pawel-czerwinski-Pr-SEv-Ubkox-A-unsplash.jpg)>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src=url(https://i.postimg.cc/bv8qnFxC/pawel-czerwinski-1-RCFUWd4-HJU-unsplash.jpg)>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <img src=url(https://i.postimg.cc/15HkT5wH/nick-fewings-I3-Y1-N-d-k-HU-unsplash.jpg)>
       </div>
     </div>
-  </div>
     </div>
     <footer class="site-footer">
       <div class="container">
@@ -56,12 +67,11 @@
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
           </div>  
+        </div>
       </div>
-   
-      </div>
-    </footer>  
-    </div>     
-
+    </footer> 
+  </div> 
+  </div>      
 </template>
 
 <script>
@@ -94,88 +104,23 @@ export default {
   background-size: cover;
 }
 .container {
-  margin-top: 5.5em;
-  height: 65vh;
+  margin-top: 100px;
+  height: 40vh;
 }
 .content{
-  margin-top: 50%;
-}
-.prod-card {
-  width: 900px;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
+  margin-top: 10%;
 }
 
-.img {
-  width: 320px;
-  float: left;
-  overflow: hidden;
-}
-.img img {
-  width: 100%;
-}
-
-.prod-title {
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.prod-info {
-  float: left;
-  padding: 20px 40px;
-}
-.prod-info span {
-  display: block;
-  overflow: hidden;
-  margin: 4px;
-}
-.prod-info span a {
-  display: block;
-  float: left;
-  padding: 2px 4px;
-  margin-right: 6px;
-  border: 2px solid;
-  color: #e67e22;
-  font-size: 20px;
-  border-radius: 8px;
-}
-
-.desc {
-  font-size: 20px;
-  color: #95a5a6;
-}
-
-.price {
-  color: #2980b9;
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.add {
-  width: 260px;
-  font-size: 24px;
-  color: white;
-  background: #2c3e50;
-  display: block;
-  float: left;
-  padding: 8px;
-  text-align: center;
-  margin: 8px 0;
-  transition: opacity 0.4s;
-}
-.add:hover {
-  opacity: 0.7;
-}
-
-@media screen and (min-width: 100px) and (max-width: 799px) {
-}
 .site-footer{
   /* background-color: rgb(12, 226, 41); */
   margin-top: 90vh;
 }
+/* @media (min-width: 768px)
+.col-sm-3 {
+    width: 25%;
+}
+@media (min-width: 768px)
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+} */
 </style>
