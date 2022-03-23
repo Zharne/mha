@@ -60,12 +60,15 @@
             <h6>About</h6>
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto id ipsa incidunt laboriosam nisi neque corporis itaque accusantium iste alias perferendis, molestiae tenetur ducimus atque nostrum similique corrupti natus aliquam.
             </p>
-          </div>
-          <div class="col-xs-6 col-md-3">
+          </div><br><br>
+          <!-- <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
-          </div> 
+          </div>  -->
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
+            <li><a href="/about" target="_blank">About Us</a></li>
+            <li><a href="/contact" target="_blank">Contact</a></li>
+            <li><a href="#" target="_blank">Add link</a></li>
           </div>  
         </div>
       </div>
