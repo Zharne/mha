@@ -2,11 +2,11 @@
    <div class="blog">
     <h1>This is the blog page</h1>
 
-  <div class="container" v-if="posts.length">
-  			<div v-for = "post in posts" :key="post.id" class="posts">
+  <div class="container">
+  			<div v-for ="post in posts" :key="post.id" class="posts">
 					<div class="card">
 						<div class="card-image">
-							<img src="posts.img" alt="">
+							<img :src="posts.img"/>
 						</div>
 						<div class="card-content">
 							<h3>{{posts.title}}</h3>
@@ -42,17 +42,16 @@
 export default { 
   data() {
     return {
-      posts: []
+      posts: [],
     }
   },
   mounted() {
-    fetch('https://mental-health-association.herokuapp.com/') // ADD HEROKU LINK INSTEAD OF LOCALHOST
+    fetch('https://mental-health-association.herokuapp.com/posts') // ADD HEROKU LINK INSTEAD OF LOCALHOST
       .then(res => res.json())
       .then(data => this.posts = data)
       .catch(err => console.log(err.message))
   }
 }
-
 
 </script>
 

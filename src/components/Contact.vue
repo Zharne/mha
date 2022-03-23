@@ -60,7 +60,7 @@ name:"Contact",
   box-sizing: border-box;
 } */
 .img{
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
+  /* background-image: ; */
   background-repeat: no-repeat;
   height: 90vh;
 }
@@ -80,6 +80,7 @@ name:"Contact",
   margin: 80px 50px;
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .contact-links, .contact-form-wrapper {
@@ -89,8 +90,9 @@ name:"Contact",
 
 
 .contact-links {
-  background-color: #1f2e43;
-  background:
+  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
+  
+  /* background:
     radial-gradient(
       circle at 55% 92%, #426691 0 12%, transparent 12.2%
     ), 
@@ -103,7 +105,7 @@ name:"Contact",
     radial-gradient(
       circle at 0% 0%, #263a53 0 40%, transparent 40.2%
     ), 
-    #1f2e43;
+    #1f2e43; */
   border-radius: 10px 0 0 10px;
 }
 

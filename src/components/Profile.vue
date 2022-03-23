@@ -1,24 +1,65 @@
 <template>
   <div class="img">
-      <div class="wrapper">
-    <div class="logo"> <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt=""> </div>
-    <div class="text-center mt-4 name"> Twitter </div>
-    <form class="p-3 mt-3">
-        <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input type="text" name="userName" id="userName" placeholder="Username"> </div>
-        <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="password" id="pwd" placeholder="Password"> </div> <button class="btn mt-3">Login</button>
-    </form>
-    <div class="text-center fs-6"> <a href="#">Forget password?</a> or <a href="#">Sign up</a> </div>
-</div>
+     	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
   </div>
 </template>
 
 <script>
 export default {
-name: 'Profile',
-components:{
-
-}
-}
+   data() {
+       return {
+           username:"",
+           email: "",
+           password:"",
+       };
+   },
+methods: {
+    register() {
+        fetch("https://mental-health-association.herokuapp.com/users/register", {
+            method: "POST",
+            body: JSON.stringify({
+                username: this.username,
+                email: this.email,
+                password: this.password,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        })
+        .then((response) => response.json())
+        .then((json) => {
+            this.msg = `${this.name} registered Successfully`;
+            alert("redirecting to login...");
+            localStorage.setItem("jwt", json.jwt);
+            this.$router.push({name: "Login"});
+        })
+        .catch((err) => {
+            alert(err);
+        });
+    },
+},
+};
 </script>
 
 <style scoped>
@@ -27,95 +68,95 @@ components:{
   background-repeat: no-repeat;
   height: 90vh;
 }
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	/* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
+}
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #6d44b8;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
 
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
 
- body {
-     background: #ecf0f3
- }
-
- .wrapper {
-     max-width: 350px;
-     min-height: 500px;
-     /* margin: 80px auto; */
-     padding: 40px 30px 30px 30px;
-     background-color: #ecf0f3;
-     border-radius: 15px;
-     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff
- }
-
- .logo {
-     width: 80px;
-     margin: auto
- }
-
- .logo img {
-     width: 100%;
-     height: 80px;
-     object-fit: cover;
-     border-radius: 50%;
-     box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff
- }
-
- .wrapper .name {
-     font-weight: 600;
-     font-size: 1.4rem;
-     letter-spacing: 1.3px;
-     padding-left: 10px;
-     color: #555
- }
-
- .wrapper .form-field input {
-     width: 100%;
-     display: block;
-     border: none;
-     outline: none;
-     background: none;
-     font-size: 1.2rem;
-     color: #666;
-     padding: 10px 15px 10px 10px
- }
-
- .wrapper .form-field {
-     padding-left: 10px;
-     margin-bottom: 20px;
-     border-radius: 20px;
-     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
- }
-
- .wrapper .form-field .fas {
-     color: #555
- }
-
- .wrapper .btn {
-     box-shadow: none;
-     width: 100%;
-     height: 40px;
-     background-color: rgba(66, 185, 10, 0.867);
-     color: #fff;
-     border-radius: 25px;
-     box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
-     letter-spacing: 1.3px
- }
-
- .wrapper .btn:hover {
-     background-color: rgba(66, 185, 10, 0.867)
- }
-
- .wrapper a {
-     text-decoration: none;
-     font-size: 0.8rem;
-     color: rgba(66, 185, 10, 0.867)
- }
-
- .wrapper a:hover {
-     color: rgba(66, 185, 10, 0.867)
- }
-
- @media(max-width: 380px) {
-     .wrapper {
-         margin: 30px 20px;
-         padding: 40px 15px 15px 15px
-     }
- }
 </style>

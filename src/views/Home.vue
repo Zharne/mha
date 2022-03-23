@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-    <div class="img">
-    <h3>THE MENTAL HEALTH ASSOCIATION</h3>
+    <div class="parallax">
+    <!-- <h3>THE MENTAL HEALTH ASSOCIATION</h3> -->
     <div class="slide">
 
+    </div>
     </div>
     <footer class="site-footer">
       <div class="container">
@@ -24,7 +25,7 @@
       </div>
     </footer>  
     </div>     
-  </div>
+
 </template>
 
 <script>
@@ -40,9 +41,21 @@ export default {
   height: 90vh;
 }
 .img{
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
   background-repeat: no-repeat;
   
+}
+.parallax {
+  /* The image used */
+  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
+
+  /* Set a specific height */
+  min-height: 600px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .site-footer{
   /* background-color: rgb(12, 226, 41); */
