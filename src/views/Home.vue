@@ -17,12 +17,12 @@
             <p>*Environmental exposures before birth. Exposure to environmental stressors, inflammatory conditions, toxins, alcohol or drugs while in the womb can sometimes be linked to mental illness.</p>
             <p>*Brain chemistry. Neurotransmitters are naturally occurring brain chemicals that carry signals to other parts of your brain and body. When the neural networks involving these chemicals are impaired, the function of nerve receptors and nerve systems change, leading to depression and other emotional disorders.</p>
           </div>
-           <div class="col-sm-6"><h5>PREVENTION</h5>
+          <div class="col-sm-6"><h5>PREVENTION</h5>
            <p>Pay attention to warning signs.</p>
            <p>Get routine medical care.</p>
            <p>Get help when you need it. </p>
            <p>Take good care of yourself. Sufficient sleep, healthy eating and regular physical activity are important. Try to maintain a regular schedule. </p>
-        </div>  
+          </div>  
       </div>  
     </div><br><br> 
     <div class="row">

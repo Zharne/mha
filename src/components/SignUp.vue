@@ -22,7 +22,7 @@
 					<button>Login</button>
 				</form>
 			</div>
-	</div>
+	  </div>
     </div> 
   </div>
 </template>

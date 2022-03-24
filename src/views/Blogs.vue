@@ -1,6 +1,5 @@
 <template>
   <div class="blog">
-  
       <div class="blog-card spring-fever">
       <div class="title-content">
         <h3><a href="#">10 inspiring photos</a></h3>
@@ -35,8 +34,7 @@
 						</div>
 					</div>
     		</div>
-  		</div>   -->
-    
+  		</div>   --> 
   </div>
 </template>
 

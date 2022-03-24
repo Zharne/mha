@@ -1,11 +1,11 @@
-import PostService from "../services/post.service";
+import BlogService from "../services/blog.service";
 const initialState = post ? { post } : { post: null };
 export const post = {
   namespaced: true,
   state: initialState,
   actions: {
     create({ commit }, post) {
-      return PostService.create(post).then(
+      return BlogService.create(post).then(
         (post) => {
           commit("CreatedPost", post);
           return Promise.resolve(post);
@@ -17,7 +17,7 @@ export const post = {
       );
     },
     delete({ commit }, post) {
-      return PostService.delete(post).then(
+      return BlogService.delete(post).then(
         (post) => {
           commit("CreatedPost", post);
           return Promise.resolve(post);
