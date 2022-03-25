@@ -1,10 +1,10 @@
 import axios from "axios";
-const API_URL = "https://mental-health-association.herokuapp.com/users";
+const API_URL = "https://mental-health-association.herokuapp.com/users/";
 class AuthService {
-  login(user) {
+  async login(user) {
     return axios
-      .post(API_URL + "signin", {
-        name: user.username,
+      .post(API_URL + "login", {
+        name: user.name,
         password: user.password,
       })
       .then((response) => {
@@ -18,8 +18,8 @@ class AuthService {
     localStorage.removeItem("user");
   }
   register(user) {
-    return axios.post(API_URL + "signup", {
-      name: user.username,
+    return axios.post(API_URL + "register", {
+      name: user.name,
       email: user.email,
       password: user.password,
     });

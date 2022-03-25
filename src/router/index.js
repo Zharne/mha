@@ -50,4 +50,33 @@ const router = createRouter({
   routes
 })
 
+// const router = new VueRouter({
+//   routes: [
+//     {
+//       path:"/Blogs",
+//       redirect: {
+//         name: "login"
+//       }
+//     },
+//     {
+//       path: "/login",
+//       name:"login",
+//       component: Login
+//     },
+//     {
+//       path:"/auth.module",
+//       name:"auth",
+//       store:auth,
+//        beforeEnter: (to, from, next) => {
+//             if(store.state.authenticated == false) {
+//               next("/login");
+//             } else {
+//               next();
+//             }
+// }
+//     }
+//   ]
+// });
+// export default new vueRouter
+
 export default router

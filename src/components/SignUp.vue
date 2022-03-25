@@ -5,11 +5,11 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form>
+				<form @submit="handleRegister" :validation-schema="schema">
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
+					<input type="text" v-model="name" placeholder="User name" required="">
+					<input type="email" v-model="email" placeholder="Email" required="">
+					<input type="password" v-model="password" placeholder="Password" required="">
 					<button>Sign up</button>
 				</form>
 			</div>
@@ -29,36 +29,64 @@
 
 <script>
 export default {
-   data() {
-       return {
-           username:"",
-           password:"",
-       };
-   },
-methods: {
-    register() {
-        fetch("https://d0g-blog.herokuapp.com/users/register", {
-            method: "POST",
-            body: JSON.stringify({
-                username: this.username,
+// 	computed: {
+//     loggedIn() {
+//       return this.$store.state.auth.status.loggedIn;
+//     },
+//   },
+//   mounted() {
+//     if (this.loggedIn) {
+//       this.$router.push("/Login");
+//     }
+//   },
+//   methods: {
+//     handleRegister(user) {
+		
+//       this.errorMessage = "";
+//       this.successful = false;
+//       this.loading = true;
+//       this.$store.dispatch("auth/register", user).then(
+//         (data) => {
+//           this.message = data.message;
+//           this.successful = true;
+//           this.loading = false;
+//         }
+//       ).catch((error) => {
+//              error = this.errorMessage;
+//       });
+//     },
+//   },
+
+//    data() {
+//        return {
+//            username:"",
+//            password:"",
+//        };
+//    },
+ methods: {
+     register() {
+         fetch("https://d0g-blog.herokuapp.com/users/register", {
+             method: "POST",
+             body: JSON.stringify({
+                name: this.name,
                 password: this.password,
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8",
-            },
-        })
-        .then((response) => response.json())
-        .then((json) => {
-            this.msg = `${this.name} registered Successfully`;
-            alert("redirecting to login...");
-            localStorage.setItem("jwt", json.jwt);
-            this.$router.push({name: "Login"});
-        })
-        .catch((err) => {
-            alert(err);
-        });
-    },
-},
+             }),
+             headers: {
+                 "Content-type": "application/json; charset=UTF-8",
+             },
+         })
+         .then((response) => response.json())
+         .then((json) => {
+             this.msg = `${this.name} registered Successfully`;
+             alert("redirecting to login...");
+             localStorage.setItem("jwt", json.jwt);
+             this.$router.push({name: "Login"});
+         })
+         .catch((err) => {
+             alert(err);
+         });
+     },
+ },
 };
 </script>
 
