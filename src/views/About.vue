@@ -1,32 +1,41 @@
 <template>
   <div id='About'>
-      <div class="content">
-        <div class="content-container">
-          <div class="row">
+    <div class="content-container">
+      <div class="row-content">
             <div class="col-md-6 offset-md-3"> 
-              <h3>What is mental health</h3>
-              <p>The World Health Organization (WHO) conceptualizes mental health as a “state of well-being in which the individual realizes his or her own abilities, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to his or her community”. Mental disorders and psychoactive substance-related disorders are highly prevalent throughout the world and are major contributors to morbidity, disability, and premature mortality. However, the resources allocated by countries to tackle this burden are insufficient, are inequitably distributed, and, at times, inefficiently used. Together, this has led to a treatment gap that, in many countries, is more than 70%. The stigma, social exclusion, and discrimination that occur around people with mental disorders compound the situation.</p>
-            </div>
-          </div>
-           
-        </div>
-      </div>  
-      <div class="container1">
-      <div class="row align-items-start">
-        
-        <div class="col-3">
-          <h6>Suicide Crisis Helpline</h6> 0800 567 567 </div>
-        <div class="col-3">  
-          <h6>Mental Health Helpline</h6> 0800 456 789</div>
-        <div class="col-3">  
-          <h6>Depression & Anxiety Helpline</h6> 0800 70 80 90</div>
-        <div class="col-3">  
-          <h6>ADHD Helpline</h6> 0800 55 44 33</div>
-        </div>
-        </div>
-        <div class="links">
-        </div>
-      </div>  
+              <h1>Our Aim</h1>
+              <p>We aim to bring awareness to mental health as a crisis in our society as statistics are showing. Awareness can also create new improvements for the mentally ill. As there is more demand from the public, it can produce a flow of attention.  This attention can eventually result in great changes for the mentally ill.  It can lead to improvements on policy, research, and service development. Let's make this issue a priority because we have a high demand.  If we raise more awareness, the demands may increase and can result in more funding for our needs.</p><br>
+              <p>We aim to empower others with knowledge and information to be able to access mental health services. Mental illness cannot be treated by simple desire, treatment is necessary.  We found that in many cases people may not access these services because it is difficult due to cultural or language barriers. If we are aware of our limitations and strengths, stigma may disappear and we might be brave enough to seek help. The more you know, the more power you have.</p><br>
+              <p>Taking care of one's mental health is of utmost importance.  We must be informed about it because it can easily happen to someone close to us. Community awareness for mental health reduces stigma. Mental health awareness increases the chances for early intervention, which can result in a fast recovery. Awareness reduces negative adjectives that have been set to describe our people with a metal illness.</p><br>
+            </div> 
+      </div>
+    </div>  
+       
+      <div class="container2">
+        <div class="wrapper">
+<div class="card">
+  <img src="https://i.postimg.cc/c1VfLTpw/round-image5.jpg" width="100" class="rounded-circle"> <br>
+	<h3 class="card-title">Jody March (Chief Editor)</h3>
+		<p class="card-content">Jody has many year's experience as an editor and is an intergral part of our team at the Mental Health Association</p>
+		
+	</div>
+	<div class="card">
+    <img src="https://the-cyber-squad.com/wp-content/uploads/2021/12/website_photo.png" width="100" class="rounded-circle"> <br>
+		<h3 class="card-title">Cameron Phillips (Mindfulness Teacher)</h3>
+		<p class="card-content">Cameron is a qualified instructor and is an intergral part of our team at the Mental Health Association</p>
+		
+	</div>
+	<div class="card">
+    <img src="https://i.postimg.cc/3JMLWCLN/round-images.jpg" width="100" class="rounded-circle"> <br>
+		<h3 class="card-title">Nadine Witbooi (Psychiatrist Advisor)</h3>
+		<p class="card-content">Nadine is a licensed psychiatrist and is an intergral part of our team at the Mental Health Association.</p>
+		
+	</div>
+</div>
+          
+      	
+      </div>
+    </div>  
 </template>
 
 <script>
@@ -39,317 +48,92 @@ export default {
 
 <style scoped>
 #About{
-	 width: 100%;
-   /* height: 90vh;  */
-   background-color: rgb(231, 219, 219)
-	 /* background-color:rgba(0, 0, 0, 15%); */
-	 /* margin-top: 2rem; */
-	
+	 width: 100%;	
 }
-/* .img{
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
-  background-repeat: no-repeat;
-  height: 90vh;
-} */
+.content-container{
+  background-color: rgb(233, 248, 233);
+}
 .content{
   border-radius: 30px;
-  background-color: #1fd1f9;
+  /* background-color: #1fd1f9; */
   margin: 20px;
-  /* width:60% */
+  
 }
 .container1{
   margin-top: 5%;
+  margin-left: 10%;
   border-block: 5px;
+  height: 30vh;
+ 
 }
 .col-3{
   border: solid;
   border-radius: 20px;
   background-color: chartreuse;
 }
-
-/* .project {
-	display: flex;
-	background-color: rgba(0, 0, 0, 15%); 
+.container2{
+  background-color: rgb(233, 248, 233);
+ 
 }
-.container {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	margin: 40px 0;
+.wrapper{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
 }
-
-.container .card {
-	position: relative;
-	width: 300px;
-	height: 400px;
-	background: rgba(255, 255, 255, 0.05); 
-  	background:#111;
-	margin: 20px;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-	border-radius: 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	backdrop-filter: blur(10px);
+ .card{
+    max-width: 300px;
+     min-height: 250px;
+     background: #4181ee;
+     padding: 30px;
+     box-sizing: border-box;
+     color: #FFF;
+     margin:20px;
+     box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
 }
-
-.container .card .content {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	transition: 0.5s;
+.rounded-circle{
+  margin-left:50px
 }
-
-.container .card:hover .content {
-	transform: translateY(-20px);
+ .card:nth-child(2){
+    background: #4181ee;
 }
-
-.container .card .content .imgBx {
-	position: relative;
-	width: 150px;
-	height: 150px;
-	overflow: hidden;
+ .card:last-child{
+    background: #4181ee;
 }
-
-.container .card .content .imgBx img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+ .card-title{
+     margin-top: 0;
+     font-size: 16px;
+     font-weight: 600;
+     letter-spacing: 1.2px;
 }
-
-.container .card .content .contentBx h3 {
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 500;
-	font-size: 18px;
-	text-align: center;
-	margin: 20px 0 10px;
-	line-height: 1.1em;
+ .card-content{
+     font-size: 14px;
+     letter-spacing: 0.5px;
+     line-height: 1.5;
 }
-
-.container .card .content .contentBx h3 span {
-	font-size: 12px;
-	font-weight: 300;
-	text-transform: initial;
+ .card-btn{
+     all: unset;
+     display: block;
+     margin-left: auto;
+     border: 2px solid #FFF;
+     padding: 10px 15px;
+     border-radius: 25px;
+     font-size: 10px;
+     font-weight: 600;
+     transition: all 0.5s;
+     cursor: pointer;
+     letter-spacing: 1.2px;
 }
-
-.container .card .sci {
-	position: absolute;
-	bottom: 50px;
-	display: flex;
+ .card-btn:hover{
+    color:#02b875;
+    background: #FFF;
 }
-
-.container .card .sci li {
-	list-style: none;
-	margin: 0 10px;
-	transform: translateY(40px);
-	transition: 0.5s;
-	opacity: 0;
+ .card:nth-child(2) .card-btn:hover{
+    color:#4181ee;
+    background: #FFF;
 }
-
-.container .card:hover .sci li {
-	transform: translateY(0px);
-	opacity: 1;
+ .card:last-child .card-btn:hover{
+    color:#673ab7;
+     background: #FFF;
 }
-
-.container .card .sci li a {
-	color: #fff;
-	font-size: 20px;
-}
-#about-me{
-  background-color: whitesmoke;
-  padding-bottom: 30px; 
-  height: 100vh;
-  width: 100%;
-}
-.container{
-    height: 100vh;
-    margin-left: 200px;
-    padding-bottom:30px ; 
-} */
-
-/* Button */
-/* .frame {
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
-button {
-  margin: 20px;
-}
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-}
-.btn-9 {
-  border: none;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-.btn-9:after {
-  position: absolute;
-  content: " ";
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-   background-color: #1fd1f9;
-background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
-  transition: all 0.3s ease;
-}
-.btn-9:hover {
-  background: transparent;
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-  color: #fff;
-}
-.btn-9:hover:after {
-  -webkit-transform: scale(2) rotate(180deg);
-  transform: scale(2) rotate(180deg);
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-}
-
-.site-footer{
-  background-color: aqua;
-  margin-top: 90vh;
-}
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: "Quicksand", sans-serif;
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background: #7f7fd5;
-  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  width: clamp(20rem, calc(20rem + 2vw), 22rem);
-  overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
-  background: #ECE9E6;
-background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-
-}
-
-
-
-.card__body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-
-.tag {
-  align-self: flex-start;
-  padding: .25em .75em;
-  border-radius: 1em;
-  font-size: .75rem;
-}
-
-.tag + .tag {
-  margin-left: .5em;
-}
-
-.tag-blue {
-  background: #56CCF2;
-background: linear-gradient(to bottom, #2F80ED, #56CCF2);
-  color: #fafafa;
-}
-
-.tag-brown {
-  background: #D1913C;
-background: linear-gradient(to bottom, #FFD194, #D1913C);
-  color: #fafafa;
-}
-
-.tag-red {
-  background: #cb2d3e;
-background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-  color: #fafafa;
-}
-
-.card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
-
-.card__footer {
-  display: flex;
-  padding: 1rem;
-  margin-top: auto;
-}
-
-.user {
-  display: flex;
-  gap: .5rem;
-}
-
-.user__image {
-  border-radius: 50%;
-}
-
-.user__info > small {
-  color: #666;
-}
- */
 
 </style>

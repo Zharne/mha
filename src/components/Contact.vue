@@ -120,8 +120,9 @@ export default {
 
 
 .contact-links {
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
-  
+  background-image: url('https://i.postimg.cc/FRvZhBfy/total-shape-Ianw2.jpg');
+  background-position: center;
+  background-size: cover;
   /* background:
     radial-gradient(
       circle at 55% 92%, #426691 0 12%, transparent 12.2%

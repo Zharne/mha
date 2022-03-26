@@ -29,7 +29,7 @@
     </div><br><br> 
     <div class="row">
       <div class="col-sm-3 col-xs-6">
-        <img class="image" src= "https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg">
+        <img class="image" src= "https://i.postimg.cc/0NfDytRD/nick-fewings-zng-Ppv-ABB4-E-unsplash.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
         <img class="image" src= "https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg">
@@ -55,7 +55,6 @@
         <img class="image" src="https://i.postimg.cc/15HkT5wH/nick-fewings-I3-Y1-N-d-k-HU-unsplash.jpg">
       </div>
     </div>
-    <!-- </div> -->
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -81,11 +80,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
- 
+
 }
 </script>
 <style scoped>
@@ -98,10 +94,7 @@ export default {
   
 }
 .parallax {
-  /* The image used */
   background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
-
-  /* Set a specific height */
   min-height: 600px;
 
   /* Create the parallax scrolling effect */

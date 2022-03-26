@@ -4,8 +4,8 @@
           id="submit-btn"
           class="btn btn-mod btn-border btn-large"
           @click="toggleModal"
-        >
-          Create a Post
+        > CREATE BLOG
+          <!-- Create a Blog/Create a post inside of a blog -->
         </button>
   </div>
   <div v-if="posts.length">
@@ -15,7 +15,10 @@
         <div class="card">
           <h3 class="card-title">{{post.title}}</h3>
             <p class="card-content">{{post.description}}</p>
-            <button class="card-btn">READ MORE</button><br>
+            <!-- <a :href={{post.link}}> -->
+              <button class="card-btn">READ MORE</button>
+              <!-- </a> -->
+              <br>
           <div class="utility-info">
             <ul class="utility-list">
               <li><span class="licon icon-like"></span><a href="#">2</a></li>
