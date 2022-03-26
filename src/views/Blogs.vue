@@ -1,44 +1,59 @@
 <template>
   <div class="blog">
-    <div class="container" v-if="posts">
-  		<div v-for ="post in posts" :key="post.id" class="posts">
-      <div class="blog-card spring-fever">
-      <div class="title-content">
-        <h3><a href="#">{{posts.title}}</a></h3>
-        <div class="intro"> <a href="#">Inspiration</a> </div>
+    <div class="container">
+      <div class="add">
+        <button
+        id="submit-btn"
+        class="btn btn-mod btn-border btn-large"
+        @click="toggleModal"
+      >
+        Create a Post
+      </button>
       </div>
-      <div class="card-info">
-        <p>{{posts.description}}</p>
-        <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+  		<!-- <div v-for ="post in posts" :key="post.id" class="posts"> -->
+         <!-- <img :src="post.img"/> -->
+      <!-- <div class="container" v-if="posts"> -->
+    <div v-for ="post in posts" :key="post.id" class="posts">    
+      <div class="blog-card spring-fever" v-if="posts.length">
+          <img :src="post.img"/>
+            <div class="title-content">
+              <h3>{{post.title}}</h3>
+              <!-- <div class="intro"> <a href="#">Inspiration</a> </div> -->
+            </div>
+            <div class="card-info">
+              <p>{{post.description}}</p>
+              <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+            </div>
+            <div class="utility-info">
+              <ul class="utility-list">
+                <!-- <li><span class="licon icon-like"></span><a href="#">2</a></li>
+                <li><span class="licon icon-com"></span><a href="#">12</a></li> -->
+                <li><span class="licon icon-dat"></span>{{post.date}}</li>
+              </ul>
+            </div>
+            <div class="gradient-overlay"></div>
+            <div class="color-overlay"></div>
+             <div class="blog-footer d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-warning w-50"
+          data-bs-toggle="modal"
+          data-bs-target="#editPost${position}"
+          >Edit Post
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger w-70 ms-3"
+          onclick="deletePost(${position})"
+          >Delete Post
+        </button>
       </div>
-      <div class="utility-info">
-        <ul class="utility-list">
-          <li><span class="licon icon-like"></span><a href="#">2</a></li>
-          <li><span class="licon icon-com"></span><a href="#">12</a></li>
-          <li><span class="licon icon-dat"></span>{{posts.date}}</li>
-          <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
-        </ul>
-      </div>
-      <div class="gradient-overlay"></div>
-      <div class="color-overlay"></div>
-    </div><!-- /.blog-card -->
-      </div>
-    </div>
 
-  <!-- <div class="container" v-if="posts">
-  			<div v-for ="post in posts" :key="post.id" class="posts">
-					<div class="card">
-						<div class="card-image">
-							<img :src="posts.img"/>
-						</div>
-						<div class="card-content">
-							<h3>{{posts.title}}</h3>
-							<p>{{posts.description}}</p>
-              <p>{{posts.date}}</p>
-						</div>
-					</div>
-    		</div>
-  		</div>   --> 
+        </div><!-- /.blog-card -->
+       
+      </div>
+      
+    </div>
   </div>
 </template>
 
@@ -46,7 +61,7 @@
 export default { 
   data() {
     return {
-      posts: [],
+      posts: []
     }
   },
   mounted() {
@@ -71,11 +86,18 @@ body {
   /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
   font-family: 'Droid Serif', serif;
 }
-
+.posts{
+  height: 50vh;
+  display:flex;
+}
+.blog{
+  height: 150vh;
+}
 .blog-card {
-  max-width: 550px;
+  
+  max-width: 400px;
   width:100%;
-  height: 500px;
+  height: 400px;
   position: absolute;
   font-family: 'Droid Serif', serif;
   color:#fff;
@@ -88,7 +110,7 @@ body {
   box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
   text-align: center;
   transition:all 0.4s;
-  background: url(https://unsplash.it/600/800?image=1061) center no-repeat;
+  /* background: url(https://unsplash.it/600/800?image=1061) center no-repeat; */
   background-size: 100%;
 }
 .blog-card a{ 
@@ -194,7 +216,7 @@ h3:after {
   text-decoration:underline
 }
 .card-info {
-   box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   width: 100%;
   position: absolute;
@@ -237,7 +259,7 @@ h3:after {
 }
 .utility-info:after{
   content:" ";
-  background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat;
+  /* background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat; */
   background-size: 30px auto;
   display:block;
   opacity: 0.4;
@@ -274,7 +296,7 @@ h3:after {
 }
 .licon:before{
   content:"";
-   background:url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg?) -2px -6px no-repeat;
+   /* background:url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg?) -2px -6px no-repeat; */
    background-size:250px;
    width:26px;
    height:20px;

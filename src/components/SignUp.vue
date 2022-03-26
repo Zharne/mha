@@ -1,9 +1,8 @@
 <template>
+
   <div class="signup">
-    <div class="img">
       <div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
-
 			<div class="signup">
 				<form @submit="handleRegister" :validation-schema="schema">
 					<label for="chk" aria-hidden="true">Sign up</label>
@@ -13,7 +12,6 @@
 					<button>Sign up</button>
 				</form>
 			</div>
-
 			<div class="login">
 				<form>
 					<label for="chk" aria-hidden="true">Login</label>
@@ -24,7 +22,7 @@
 			</div>
 	  </div>
     </div> 
-  </div>
+ 
 </template>
 
 <script>
@@ -91,11 +89,7 @@ export default {
 </script>
 
 <style scoped>
-.img{
-  background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
-  background-repeat: no-repeat;
-  height: 90vh;
-}
+
 body{
 	margin: 0;
 	padding: 0;
@@ -109,12 +103,13 @@ body{
 .main{
 	width: 350px;
 	height: 500px;
-	background: red;
+	background: rgb(123, 255, 0);
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
-  /* margin-top: 50px; */
+    margin-top: 50px; 
+	margin-left: 35%;
 }
 #chk{
 	display: none;

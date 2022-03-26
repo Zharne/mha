@@ -3,7 +3,9 @@
     <div class="parallax">
     <div class="slide"></div>
     </div><br><br>
-    <h1>THE MENTAL HEALTH ASSOCIATION</h1>
+    <div class="heading">
+      <h1>THE MENTAL HEALTH ASSOCIATION</h1>
+    </div>  
     <div class="container">
       <div class="content">  
         <h3>What is mental health?</h3>
@@ -12,16 +14,16 @@
        
         <div class="row">
           <div class="col-sm-6"><h5>CAUSES</h5>
-            <p>*Inherited traits. Mental illness is more common in people whose blood        relatives also have a mental illness.
+            <p>•Inherited traits. Mental illness is more common in people whose blood        relatives also have a mental illness.
             Certain genes may increase your risk of developing a mental illness, and your life situation may trigger it.</p>
-            <p>*Environmental exposures before birth. Exposure to environmental stressors, inflammatory conditions, toxins, alcohol or drugs while in the womb can sometimes be linked to mental illness.</p>
-            <p>*Brain chemistry. Neurotransmitters are naturally occurring brain chemicals that carry signals to other parts of your brain and body. When the neural networks involving these chemicals are impaired, the function of nerve receptors and nerve systems change, leading to depression and other emotional disorders.</p>
+            <p>•Environmental exposures before birth. Exposure to environmental stressors, inflammatory conditions, toxins, alcohol or drugs while in the womb can sometimes be linked to mental illness.</p>
+            <p>•Brain chemistry. Neurotransmitters are naturally occurring brain chemicals that carry signals to other parts of your brain and body. When the neural networks involving these chemicals are impaired, the function of nerve receptors and nerve systems change, leading to depression and other emotional disorders.</p>
           </div>
           <div class="col-sm-6"><h5>PREVENTION</h5>
-           <p>Pay attention to warning signs.</p>
-           <p>Get routine medical care.</p>
-           <p>Get help when you need it. </p>
-           <p>Take good care of yourself. Sufficient sleep, healthy eating and regular physical activity are important. Try to maintain a regular schedule. </p>
+           <p>•Pay attention to warning signs.</p>
+           <p>•Get routine medical care.</p>
+           <p>•Get help when you need it. </p>
+           <p>•Take good care of yourself. Sufficient sleep, healthy eating and regular physical activity are important. Try to maintain a regular schedule. </p>
           </div>  
       </div>  
     </div><br><br> 
@@ -38,6 +40,7 @@
       <div class="col-sm-3 col-xs-6">
         <img src= url(https://imgkub.com/images/2022/03/22/falling-ge0396a95f_1920.jpg)>
       </div>
+    </div>  
     <div class="row">
       <div class="col-sm-3 col-xs-6">
         <img src= url(https://i.postimg.cc/TY5x63BX/kat-j-NPm-R0-Rblyh-Q-unsplash.jpg)>
@@ -52,23 +55,23 @@
         <img src=url(https://i.postimg.cc/15HkT5wH/nick-fewings-I3-Y1-N-d-k-HU-unsplash.jpg)>
       </div>
     </div>
-    </div>
+    <!-- </div> -->
     <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto id ipsa incidunt laboriosam nisi neque corporis itaque accusantium iste alias perferendis, molestiae tenetur ducimus atque nostrum similique corrupti natus aliquam.
+            <h5>Mental Health Association's Aim</h5>
+            <p class="text-justify">We aim to bring more awareness to the importance of mental health and to offer more education on the topic through our blog.
             </p>
           </div><br><br>
           <!-- <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
           </div>  -->
           <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
+            <h5>Quick Links</h5>
             <li><a href="/about" target="_blank">About Us</a></li>
             <li><a href="/contact" target="_blank">Contact</a></li>
-            <li><a href="#" target="_blank">Add link</a></li>
+            <li><a href="https://www.opencounseling.com/hotlines-za" target="_blank">Helplines</a></li>
           </div>  
         </div>
       </div>
@@ -91,6 +94,7 @@ export default {
 }
 .img{
   background-repeat: no-repeat;
+  background-size: cover;
   
 }
 .parallax {
@@ -106,6 +110,25 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.heading{
+  margin-left: 20%;
+}
+h1{
+  color:rgba(66, 185, 10, 0.867);
+}
+h5{
+  color:rgba(66, 185, 10, 0.867);
+}
+h3:after {
+    content: " ";
+    display: block;
+    width: 15%;
+    height: 2px;
+    margin: 10px 20px;
+    border: 0;
+    background: #BDA26B;
+    transition: all 0.2s;
+}
 .container {
   margin-top: 100px;
   height: 40vh;
@@ -113,6 +136,9 @@ export default {
 .content{
   margin-top: 10%;
 }
+/* img{
+    vertical-align: middle;
+} */
 
 .site-footer{
   /* background-color: rgb(12, 226, 41); */

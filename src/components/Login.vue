@@ -1,6 +1,5 @@
 <template>
-    <div id="login">
-    <div class="img"> 
+    <div id="login"> 
       <div class="wrapper">
     <div class="logo"><img
         class="headshot"
@@ -71,7 +70,7 @@
       </div> 
     </div>
   </div> -->
-    </div> 
+    
     </div> 
 </template>
 
@@ -165,11 +164,11 @@ export default {
     // };
 </script>
 <style scoped>
-.img{
+/* .img{
   background-image: url('https://i.postimg.cc/MpyB8dyc/total-shape-Ianw4-Rd-Vuoo-unsplash.jpg');
   background-repeat: no-repeat;
   height: 90vh;
-}
+} */
 /* .container {
     margin: 50px auto 
 } */
@@ -183,7 +182,7 @@ export default {
  .wrapper {
      max-width: 350px;
      min-height: 500px;
-     /* margin: 80px auto; */
+     margin: 65px auto; 
      padding: 40px 30px 30px 30px;
      background-color: #ecf0f3;
      border-radius: 15px;
