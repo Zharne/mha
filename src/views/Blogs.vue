@@ -1,59 +1,34 @@
 <template>
-  <div class="blog">
-    <div class="container">
-      <div class="add">
-        <button
-        id="submit-btn"
-        class="btn btn-mod btn-border btn-large"
-        @click="toggleModal"
-      >
-        Create a Post
-      </button>
-      </div>
-  		<!-- <div v-for ="post in posts" :key="post.id" class="posts"> -->
-         <!-- <img :src="post.img"/> -->
-      <!-- <div class="container" v-if="posts"> -->
-    <div v-for ="post in posts" :key="post.id" class="posts">    
-      <div class="blog-card spring-fever" v-if="posts.length">
-          <img :src="post.img"/>
-            <div class="title-content">
-              <h3>{{post.title}}</h3>
-              <!-- <div class="intro"> <a href="#">Inspiration</a> </div> -->
-            </div>
-            <div class="card-info">
-              <p>{{post.description}}</p>
-              <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
-            </div>
-            <div class="utility-info">
-              <ul class="utility-list">
-                <!-- <li><span class="licon icon-like"></span><a href="#">2</a></li>
-                <li><span class="licon icon-com"></span><a href="#">12</a></li> -->
-                <li><span class="licon icon-dat"></span>{{post.date}}</li>
-              </ul>
-            </div>
-            <div class="gradient-overlay"></div>
-            <div class="color-overlay"></div>
-             <div class="blog-footer d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-warning w-50"
-          data-bs-toggle="modal"
-          data-bs-target="#editPost${position}"
-          >Edit Post
+  <div class="add">
+          <button
+          id="submit-btn"
+          class="btn btn-mod btn-border btn-large"
+          @click="toggleModal"
+        >
+          Create a Post
         </button>
-        <button
-          type="button"
-          class="btn btn-danger w-70 ms-3"
-          onclick="deletePost(${position})"
-          >Delete Post
-        </button>
+  </div>
+  <div v-if="posts.length">
+    <div v-for="post in posts" :key="post">
+        <!-- <h1>Responsive Card</h1> -->
+      <div class="wrapper">
+        <div class="card">
+          <h3 class="card-title">{{post.title}}</h3>
+            <p class="card-content">{{post.description}}</p>
+            <button class="card-btn">READ MORE</button><br>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li><span class="licon icon-like"></span><a href="#">2</a></li>
+              <li><span class="licon icon-com"></span><a href="#">12</a></li>
+              <li><span class="licon icon-dat"></span>{{post.date}}</li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-        </div><!-- /.blog-card -->
-       
       </div>
-      
-    </div>
+  </div>
+  <div v-else>
+    <p>loading content...</p>
   </div>
 </template>
 
@@ -78,177 +53,7 @@ export default {
 </script>
 
 <style>
-@import url(//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic);
-html,body{
-  height:100%
-}
-body {
-  /* background: linear-gradient(to bottom, rgba(0,5,10,0.4) 0%,rgba(0,0,0,0) 100%); */
-  font-family: 'Droid Serif', serif;
-}
-.posts{
-  height: 50vh;
-  display:flex;
-}
-.blog{
-  height: 150vh;
-}
-.blog-card {
-  
-  max-width: 400px;
-  width:100%;
-  height: 400px;
-  position: absolute;
-  font-family: 'Droid Serif', serif;
-  color:#fff;
-  top: 20%;
-  right: 0;  
-  left: 0;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 0px;
-  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  transition:all 0.4s;
-  /* background: url(https://unsplash.it/600/800?image=1061) center no-repeat; */
-  background-size: 100%;
-}
-.blog-card a{ 
-color:#fff;
-  text-decoration:none;
-  transition:all 0.2s
-}
-.blog-card .color-overlay {
-  background: rgba(64, 84, 94,0.5);
-  width: 550px;
-  height: 500px;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
-}
-.blog-card .gradient-overlay {  
-  background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 21%);
-  width: 550px;
-  height: 500px;
-  position: absolute;
-  top: 350px;
-  left: 0;
-  z-index: 15;
-}
-.blog-card:hover{
-    box-shadow: 0px 18px 20px -9px rgba(0, 10, 30, 0.75);
-}
-.blog-card:hover .card-info {
-  opacity: 1;
-  bottom: 100px;
-}
-.blog-card:hover .color-overlay {
-  background: rgba(64, 64, 70,0.8);
-}
-.blog-card:hover .title-content{
-  margin-top:70px
-}
-.title-content {
-  text-align: center;
-  margin: 170px 0 0 0;
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transition:all 0.6s
-}
 
-.blog-card:hover h3:after{
- 
-  animation: changeLetter 0.3s 1 linear;
-  width:80%
-}
-
-.blog-card h3,h1 {
-  font-size: 1.9em;
-  font-weight: 400;
-  letter-spacing: 1px;
-  font-family: 'Abril Fatface', serif;
-  margin-bottom: 0;
-  display:inline-block;
-}
-.blog-card h3 a{  
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
-  transition:all 0.2s
-}
-.blog-card h3 a:hover{
-  text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.95);
-}
-h3:after {
-  content: " ";
-  display: block; 
-  width: 10%;
-  height: 2px;
-  margin: 20px auto;
-  border: 0;
-  background: #BDA26B;
-  transition:all 0.2s
-}
-
-@keyframes changeLetter {
-  0% {
-    width: 10%;
-  }
-  100% {
-    width: 80%;
-  }
-}
-
-.intro {
-  width: 170px;
-  margin: 0 auto;
-  color: #ddd;
-  font-style: italic;
-  line-height: 18px;
-}
-.intro a{
-  color: #ddd
-}
-.intro a:hover{
-  text-decoration:underline
-}
-.card-info {
-  box-sizing: border-box;
-  padding: 0;
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  margin: 0 auto;
-  padding: 0 50px;
-  font-style: 16px;
-  line-height: 24px;
-  z-index: 20;
-  opacity: 0;
-  transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
-}
-
-.card-info a{
-  display:block;
-  width:100px;
-  margin:15px auto;
-  background:#fff;
-  color:#444;
-  padding:3px 10px;
-  border-radius:2px;
-  font-size:0.8em
-}
-.card-info a:hover{
-  background: #8e7c49;
-  color:#fff;
-}
-.card-info a:hover span{
-   filter: brightness(10);
-   opacity:1
-}
 .utility-info {
   position: absolute;
   bottom: 0px;
@@ -369,6 +174,71 @@ h3:after {
 }
 
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+ body{
+     font-family: 'Roboto', sans-serif;
+}
+ h1{
+     text-align: center;
+     color: #4181ee;
+}
+ .wrapper{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+}
+ .card{
+    max-width: 300px;
+     min-height: 250px;
+     background: #02b875;
+     padding: 30px;
+     box-sizing: border-box;
+     color: #FFF;
+     margin:20px;
+     box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
+}
+ .card:nth-child(2){
+    background: #4181ee;
+}
+ .card:last-child{
+    background: #673ab7;
+}
+ .card-title{
+     margin-top: 0;
+     font-size: 16px;
+     font-weight: 600;
+     letter-spacing: 1.2px;
+}
+ .card-content{
+     font-size: 14px;
+     letter-spacing: 0.5px;
+     line-height: 1.5;
+}
+ .card-btn{
+     all: unset;
+     display: block;
+     margin-left: auto;
+     border: 2px solid #FFF;
+     padding: 10px 15px;
+     border-radius: 25px;
+     font-size: 10px;
+     font-weight: 600;
+     transition: all 0.5s;
+     cursor: pointer;
+     letter-spacing: 1.2px;
+}
+ .card-btn:hover{
+    color:#02b875;
+    background: #FFF;
+}
+ .card:nth-child(2) .card-btn:hover{
+    color:#4181ee;
+    background: #FFF;
+}
+ .card:last-child .card-btn:hover{
+    color:#673ab7;
+     background: #FFF;
+}
 
 
 </style>

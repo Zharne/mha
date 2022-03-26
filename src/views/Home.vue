@@ -29,30 +29,30 @@
     </div><br><br> 
     <div class="row">
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg)>
+        <img class="image" src= "https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg)>
+        <img class="image" src= "https://imgkub.com/images/2022/03/22/sadness-ge594f7b32_1920.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://imgkub.com/images/2022/03/22/tablets-g243c0ff75_1920.jpg)>
+        <img class="image" src= "https://imgkub.com/images/2022/03/22/tablets-g243c0ff75_1920.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://imgkub.com/images/2022/03/22/falling-ge0396a95f_1920.jpg)>
+        <img class="image" src= "https://imgkub.com/images/2022/03/22/falling-ge0396a95f_1920.jpg">
       </div>
-    </div>  
+    </div><br><br> 
     <div class="row">
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://i.postimg.cc/TY5x63BX/kat-j-NPm-R0-Rblyh-Q-unsplash.jpg)>
+        <img class="image" src= "https://i.postimg.cc/TY5x63BX/kat-j-NPm-R0-Rblyh-Q-unsplash.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src= url(https://i.postimg.cc/cHVvsb1x/pawel-czerwinski-Pr-SEv-Ubkox-A-unsplash.jpg)>
+        <img class="image" src= "https://i.postimg.cc/cHVvsb1x/pawel-czerwinski-Pr-SEv-Ubkox-A-unsplash.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src=url(https://i.postimg.cc/bv8qnFxC/pawel-czerwinski-1-RCFUWd4-HJU-unsplash.jpg)>
+        <img class="image" src="https://i.postimg.cc/bv8qnFxC/pawel-czerwinski-1-RCFUWd4-HJU-unsplash.jpg">
       </div>
       <div class="col-sm-3 col-xs-6">
-        <img src=url(https://i.postimg.cc/15HkT5wH/nick-fewings-I3-Y1-N-d-k-HU-unsplash.jpg)>
+        <img class="image" src="https://i.postimg.cc/15HkT5wH/nick-fewings-I3-Y1-N-d-k-HU-unsplash.jpg">
       </div>
     </div>
     <!-- </div> -->
@@ -136,13 +136,14 @@ h3:after {
 .content{
   margin-top: 10%;
 }
-/* img{
-    vertical-align: middle;
-} */
+.image{
+  height: 30vh;
+  width: 20vw;
+}
 
 .site-footer{
   /* background-color: rgb(12, 226, 41); */
-  margin-top: 90vh;
+  margin-top: 50vh;
 }
 /* @media (min-width: 768px)
 .col-sm-3 {
@@ -151,5 +152,5 @@ h3:after {
 @media (min-width: 768px)
 .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
-} */
+}  */
 </style>
