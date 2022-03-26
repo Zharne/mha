@@ -104,7 +104,7 @@ export default {
   background-size: cover;
 }
 .heading{
-  margin-left: 20%;
+  margin-left: 10px;
 }
 h1{
   color:rgba(66, 185, 10, 0.867);
