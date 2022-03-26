@@ -10,7 +10,6 @@
   </div>
   <div v-if="posts.length">
     <div v-for="post in posts" :key="post">
-        <!-- <h1>Responsive Card</h1> -->
       <div class="wrapper">
         <div class="card">
           <h3 class="card-title">{{post.title}}</h3>
@@ -21,8 +20,6 @@
               <br>
           <div class="utility-info">
             <ul class="utility-list">
-              <li><span class="licon icon-like"></span><a href="#">2</a></li>
-              <li><span class="licon icon-com"></span><a href="#">12</a></li>
               <li><span class="licon icon-dat"></span>{{post.date}}</li>
             </ul>
           </div>
@@ -43,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    fetch('https://mental-health-association.herokuapp.com/posts') // ADD HEROKU LINK INSTEAD OF LOCALHOST
+    fetch('https://mental-health-association.herokuapp.com/posts') 
       .then(res => res.json())
       .then(data => {
         console.log(data)
