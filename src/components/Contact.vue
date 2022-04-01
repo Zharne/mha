@@ -56,7 +56,7 @@ export default {
       console.log(this.name)
       console.log(this.email)
       console.log(this.message)
-      fetch('https://mental-health-association.herokuapp.com/users/contact', {
+      fetch('https://mental-health-association.herokuapp.com/contact', {
         method:"POST",
         body: JSON.stringify({
           name: this.name,

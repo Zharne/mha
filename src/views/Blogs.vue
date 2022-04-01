@@ -14,9 +14,9 @@
         <div class="card">
           <h3 class="card-title">{{post.title}}</h3>
             <p class="card-content">{{post.description}}</p>
-            <!-- <a :href={{post.link}}> -->
-              <button class="card-btn">READ MORE</button>
-              <!-- </a> -->
+              <a target="_blank" :href=post.link style="text-decoration: none;">
+                <button class="card-btn">READ MORE</button>
+              </a>
               <br>
           <div class="utility-info">
             <ul class="utility-list">
